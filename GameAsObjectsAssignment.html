@@ -1,0 +1,28 @@
+<script>
+  var tuxedo, persian, calico;
+
+  function Breed(name, speed, intelligence) {
+    this.name = name;
+    this.speed = speed;
+    this.position = 0;
+    this.intelligence = intelligence;
+    this.run = function() {
+    	if (Math.random() * 10 < this.intelligence) {
+    		this.position = this.position + this.speed;
+    	}
+    }
+  }
+
+  tuxedo = new Breed("Merlin", 7, 8);
+  persian = new Breed("Ellie", 8, 5);
+  calico = new Breed("Diego", 5, 7)
+
+  km = 10;
+  while(tuxedo.position < km && persian.position < km && calico.position < km){
+    tuxedo.run();
+    persian.run();
+    calico.run();
+    console.log(tuxedo.name + ": " + tuxedo.position + ", " + persian.name + ": " + persian.position + ", " + calico.name + ": " + calico.position);
+  }
+
+</script>
